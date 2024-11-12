@@ -1,0 +1,9 @@
+github.com/attilabuti/go-snefru v0.0.0-20240724165900-d496b3e26753 h1:pkrsn3ig3b63DFMRm2y9sr1BgLPi3zXwbqjmmIMp4PI=
+github.com/attilabuti/go-snefru v0.0.0-20240724165900-d496b3e26753/go.mod h1:Wo6V32tYnVveNkUGWPwjJpz7J7yzkV6Lf1fYBKPC47M=
+github.com/dnlo/struct2csv v0.0.0-20190928115744-2f584471b24e h1:QY9tpuJoJxWopJBx44Z+MY631h8cnDtGZ0hE8paIE/A=
+github.com/dnlo/struct2csv v0.0.0-20190928115744-2f584471b24e/go.mod h1:w1gEhuC/4E2MCPRzNYw7an6MHKk1B9vKA/vGuzIw2UE=
+github.com/iancoleman/strcase v0.3.0 h1:nTXanmYxhfFAMjZL34Ov6gkzEsSJZ5DbhxWjvSASxEI=
+github.com/iancoleman/strcase v0.3.0/go.mod h1:iwCmte+B7n89clKwxIoIXy/HfoL7AsD47ZCWhYzw7ho=
+gopkg.in/check.v1 v0.0.0-20161208181325-20d25e280405/go.mod h1:Co6ibVJAznAaIkqp8huTwlJQCZ016jof/cbN4VW5Yz0=
+gopkg.in/yaml.v2 v2.4.0 h1:D8xgwECY7CYvx+Y2n4sBz93Jn9JRvxdiyyo8CTfuKaY=
+gopkg.in/yaml.v2 v2.4.0/go.mod h1:RDklbk79AGWmwhnvt/jBztapEOGDOx6ZbXqjP6csGnQ=
