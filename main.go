@@ -4,7 +4,7 @@ import (
 	"encoding/csv"
 	"encoding/hex"
 	"encoding/json"
-	"fmt"
+	"flag"
 	"io"
 	"log"
 	"net/http"
@@ -19,6 +19,12 @@ import (
 )
 
 func main() {
+	var filename string
+
+	flag.StringVar(&filename, "o", "output.csv", "Name of output file")
+
+	flag.Parse()
+
 	//Load config from file
 	f, err := os.Open("config.yml")
 	if err != nil {
@@ -32,7 +38,12 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-
+	f.Close()
+	f, err = os.Create(filename)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer f.Close()
 	u := url.URL{
 		Scheme: "https",
 		Path:   "app.roomalyzer.com/api/index.php",
@@ -50,8 +61,7 @@ func main() {
 
 	response, err := http.Get(u.String())
 	if err != nil {
-		fmt.Print(err.Error())
-		os.Exit(1)
+		log.Fatal(err)
 	}
 
 	responseData, err := io.ReadAll(response.Body)
@@ -69,7 +79,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	w := csv.NewWriter(os.Stdout)
+	w := csv.NewWriter(f)
 
 	for _, row := range rows {
 		if err := w.Write(row); err != nil {
@@ -77,7 +87,7 @@ func main() {
 		}
 	}
 
-	// Write any buffered data to the underlying writer (standard output).
+	// Write any buffered data to the underlying writer
 	w.Flush()
 
 	if err := w.Error(); err != nil {
