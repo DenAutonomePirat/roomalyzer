@@ -43,7 +43,9 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+
 	defer f.Close()
+
 	u := url.URL{
 		Scheme: "https",
 		Path:   "app.roomalyzer.com/api/index.php",
