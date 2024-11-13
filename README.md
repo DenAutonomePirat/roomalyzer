@@ -1,5 +1,7 @@
+#roomalyzer
+Small program that retrieves datapoints from roomalyzer API
 
-
+##How to use
 Create <code>config.yml</code> in the same folder as roomalyzer.exe containing valid token and sensor.
     <code>
     token: ""
